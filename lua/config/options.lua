@@ -1,7 +1,7 @@
 -- Defines opt variable
 local opt = vim.opt
 
--- Enable to bufferline work 
+-- Enable to bufferline work
 opt.termguicolors = true
 
 -- Identation options
