@@ -1,7 +1,7 @@
 vim.diagnostic.config({
 	float = {
 		border = "rounded", -- Rounded border
-		source = "always", -- Show where from error(ex: pyright, lua_ls)
+		source = true, -- Show where from error(ex: pyright, lua_ls)
 	},
 	severity_sort = true,
 	signs = {
