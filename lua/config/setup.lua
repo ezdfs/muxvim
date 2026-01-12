@@ -1,6 +1,3 @@
--- lualine setup
-require("lualine").setup()
-
 -- cmp setup
 local cmp = require("cmp")
 
