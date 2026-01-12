@@ -1,6 +1,3 @@
--- bufferline setup
-require("bufferline").setup({})
-
 -- lualine setup
 require("lualine").setup()
 
