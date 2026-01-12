@@ -1,6 +1,3 @@
--- Comments.nvim setup
-require("Comment").setup()
-
 -- Gisigns setup
 require("gitsigns").setup({
 	signs = {
