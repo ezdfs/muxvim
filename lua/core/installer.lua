@@ -31,12 +31,12 @@ local function run_install_term(data)
 						end
 					end, 2000)
 
-					vim.notify("✅ " .. data.name .. " installed!", vim.log.levels.INFO)
+					vim.notify("  ✓ " .. data.name .. " installed!", vim.log.levels.INFO)
 					if data.on_success then
 						data.on_success()
 					end
 				else
-					vim.notify("❌ Installation failed for " .. data.name, vim.log.levels.ERROR)
+					vim.notify("  × Installation failed for " .. data.name, vim.log.levels.ERROR)
 				end
 			end,
 		})
