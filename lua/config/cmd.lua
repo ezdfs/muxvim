@@ -1,17 +1,3 @@
--- Open the nvim alpha screen after of Lazy
--- started first time
-vim.api.nvim_create_autocmd("User", {
-    pattern = "LazyVimStarted",
-    callback = function()
-        if vim.fn.argc() == 0 and vim.api.nvim_buf_get_name(0) == "" then
-            local present, alpha = pcall(require, "alpha")
-            if present then
-                alpha.start(false)
-            end
-        end
-    end,
-})
-
 -- Enable colorscheme as tokyonight
 vim.cmd([[colorscheme tokyonight]])
 
