@@ -13,15 +13,14 @@ return {
         require('alpha').setup(dashboard.config)
 
         local augroup = vim.api.nvim_create_augroup("AlphaOnEmpty", { clear = true })
-        vim.api.nvim_create_autocmd("VimEnter", {
+        vim.api.nvim_create_autocmd("User", {
             group = augroup,
+            pattern = "LazyVimStarted",
             callback = function()
                 if vim.fn.argc() == 0 and vim.api.nvim_buf_get_name(0) == "" then
-                    -- Clean the current buffer
-                    vim.cmd("enew | bd#")
                     local present, alpha = pcall(require, "alpha")
                     if present then
-                        alpha.start(false)
+                        alpha.start(true)
                     end
                 end
             end,
