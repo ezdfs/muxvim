@@ -25,6 +25,17 @@ M.tools = {
             vim.cmd("LspStart pyright")
         end,
     },
+    {
+        filetype = "go",
+        lsp_id = "gopls",
+        name = "Golang (Gopls)",
+        install_cmd = "pkg install -y golang gopls",
+        bin = "gopls",
+        on_success = function()
+            vim.lsp.enable("gopls")
+            vim.cmd("LspStart gopls")
+        end,
+    },
 }
 
 M.setup = function()
