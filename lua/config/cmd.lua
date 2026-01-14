@@ -23,11 +23,3 @@ vim.api.nvim_create_autocmd("User", {
         end
     end,
 })
-
-
--- Open error popup when the cursor stop on line error
-vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function()
-        vim.diagnostic.open_float(nil, { focusable = false })
-    end,
-})
