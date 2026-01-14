@@ -30,9 +30,13 @@ vim.api.nvim_create_autocmd("FileType", {
         local bufnr = args.buf
         local ft = vim.bo[bufnr].filetype
 
-        -- Verify if exists a installed parser to this  filetype
+        -- Ignore UI and system buffers
+        local ignore = { [""] = true, ["NvimTree"] = true, ["telescope"] = true, ["notify"] = true, ["lazy"] = true }
+        if ignore[ft] then return end
+
+        -- Verify if exists a installed parser to this filetype
         local lang = vim.treesitter.language.get_lang(ft) or ft
-        local has_parser = pcall(vim.treesitter.get_parser, bufnr, lang)
+        local has_parser, _ = pcall(vim.treesitter.get_parser, bufnr, lang)
 
         if has_parser then
             -- Enable highlighting
@@ -42,6 +46,13 @@ vim.api.nvim_create_autocmd("FileType", {
             vim.opt_local.foldmethod = "expr"
             vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
             vim.opt_local.foldlevel = 99
+        else
+            -- If parser is missing, try to install it automatically via nvim-treesitter
+            -- This requires 'clang' and 'tar' installed in Termux
+            vim.notify("📥 Installing Treesitter parser for: " .. ft, vim.log.levels.INFO, { title = "Treesitter" })
+            pcall(function()
+                vim.cmd("TSInstall " .. lang)
+            end)
         end
     end,
 })
