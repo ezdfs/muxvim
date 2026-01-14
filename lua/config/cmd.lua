@@ -31,11 +31,3 @@ vim.api.nvim_create_autocmd("CursorHold", {
         vim.diagnostic.open_float(nil, { focusable = false })
     end,
 })
-
--- Configures autoformat on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*",
-    callback = function(args)
-        require("conform").format({ bufnr = args.buf })
-    end,
-})
