@@ -51,7 +51,7 @@ M.tools = {
         filetype = "typescript",
         lsp_id = "vtsls",
         name = "TS Server",
-        install_cmd = "pkg install -y nodejs && npm install -g @vtsls/language-server",
+        install_cmd = "pkg install -y nodejs && npm install -g typescript && npm install -g @vtsls/language-server",
         bin = "vtsls",
         on_success = function()
             vim.lsp.enable("vtsls")

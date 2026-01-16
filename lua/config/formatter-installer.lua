@@ -41,7 +41,7 @@ M.tools = {
     },
     {
         name = "Prettier (Typescript)",
-        install_cmd = "pkg install -y nodejs && npm install -g prettier @fsouza/prettierd",
+        install_cmd = "pkg install -y nodejs && npm install -g typescript && npm install -g prettier @fsouza/prettierd",
         bin = "prettierd",
         filetype = "typescript",
         on_success = function()
