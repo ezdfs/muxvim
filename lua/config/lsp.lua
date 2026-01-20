@@ -80,10 +80,17 @@ vim.lsp.config("gopls", {
     },
 })
 
-
 vim.lsp.config("vtsls", {
     settings = {
+        vtsls = {
+            autoUseWorkspaceTsdk = true,
+        },
         typescript = {
+            updateImportsOnFileMove = { enabled = "always" },
+            suggest = {
+                completeFunctionCalls = true,
+                includeCompletionsForModuleExports = true,
+            },
             inlayHints = {
                 parameterNames = { enabled = "all" },
                 parameterTypes = { enabled = true },
@@ -92,8 +99,16 @@ vim.lsp.config("vtsls", {
                 functionLikeReturnTypes = { enabled = true },
                 enumMemberValues = { enabled = true },
             },
+            preferences = {
+                importModuleSpecifierPreference = "non-relative",
+                quoteStyle = "single",
+            },
         },
         javascript = {
+            updateImportsOnFileMove = { enabled = "always" },
+            suggest = {
+                completeFunctionCalls = true,
+            },
             inlayHints = {
                 parameterNames = { enabled = "all" },
                 parameterTypes = { enabled = true },
