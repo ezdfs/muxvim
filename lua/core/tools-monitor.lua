@@ -34,8 +34,7 @@ end
 -- Check if tool already exists
 local function tool_exists(new_tool)
     for _, existing_tool in ipairs(M.tools) do
-        if existing_tool.name == new_tool.name or
-            existing_tool.bin == new_tool.bin then
+        if existing_tool.name == new_tool.name then
             return true
         end
     end
