@@ -1,3 +1,5 @@
+local tools_monitor = require("core.tools-monitor")
+
 local M = {}
 
 -- 1. Tool definitions for the Installer
@@ -76,6 +78,10 @@ M.setup = function()
             lsp_fallback = true,
         },
     })
+
+    -- Monitores tools
+    tools_monitor.setup({ tools = M.tools })
+    tools_monitor.monitor()
 
     -- 4. Mapping for the Telescope Installer
     vim.keymap.set("n", "<leader>lf", function()
