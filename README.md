@@ -1,3 +1,7 @@
+> [!CAUTION]  
+> MuxVim is still in development and may be buggy. There are no stable releases yet.
+> 
+> With that in mind, feel free to test, modify, or submit a pull request. 👍
 # What is this project?
 
 This project is a lightweight, opinionated Neovim configuration and helper setup designed to make Neovim comfortable and productive on mobile devices (phones and tablets). It bundles sensible defaults, UI tweaks, and plugins (in Lua) that prioritize 
