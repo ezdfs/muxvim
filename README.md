@@ -51,6 +51,11 @@ small screens, touch and virtual-keyboard workflows, and performance-constrained
 
 # 📦 How to Install
 
+> [!NOTE]
+> - Initial launch may take 1-2 minutes as plugins download
+> - Treesitter parsers will install automatically in the background
+> - LSP servers will prompt for installation when needed
+
 ## Prerequisites
 - **Termux** installed(can be PlayStore version - 2026)
 - Active internet connection
@@ -64,6 +69,11 @@ pkg install -y neovim mandoc git wget make luarocks tar curl clang termux-api ri
 ```
 
 ### Step 2: Install Nerd Font(optional, but highly recommended)
+
+> [!WARNING]
+> **Font Setup is Critical**  
+> If the Nerd Font isn't properly installed and configured, the Neovim interface will display broken icons, missing emojis, and incorrect text rendering.
+
 ```bash
 # Download and install Cousine Nerd Font
 wget -P ~ https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Cousine.zip
@@ -94,8 +104,3 @@ fi
 # Start Neovim - plugins will auto-install
 nvim
 ```
-
-**First-time setup notes:**
-- Initial launch may take 1-2 minutes as plugins download
-- Treesitter parsers will install automatically in the background
-- LSP servers will prompt for installation when needed
