@@ -38,9 +38,9 @@ M.tools = {
         end,
     },
     {
-        filetype = "javascript",
+        filetype = { "javascript", "typescript" },
         lsp_id = "vtsls",
-        name = "JS Server",
+        name = "JS/TS Server",
         install_cmd = "pkg install -y nodejs && npm install -g @vtsls/language-server",
         bin = "vtsls",
         onExecutable = function()
@@ -48,17 +48,6 @@ M.tools = {
             vim.cmd("LspStart vtsls")
         end
     },
-    {
-        filetype = "typescript",
-        lsp_id = "vtsls",
-        name = "TS Server",
-        install_cmd = "pkg install -y nodejs && npm install -g typescript && npm install -g @vtsls/language-server",
-        bin = "vtsls",
-        onExecutable = function()
-            vim.lsp.enable("vtsls")
-            vim.cmd("LspStart vtsls")
-        end
-    }
 }
 
 M.setup = function()
