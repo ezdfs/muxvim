@@ -56,7 +56,7 @@ small screens, touch and virtual-keyboard workflows, and performance-constrained
 > - Treesitter parsers will install automatically in the background
 > - LSP servers will prompt for installation when needed
 
-## Prerequisites
+### Prerequisites
 - **Termux** installed(can be PlayStore version - 2026)
 - Active internet connection
 - At least 500MB storage free
