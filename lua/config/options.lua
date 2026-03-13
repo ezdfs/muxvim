@@ -13,7 +13,7 @@ opt.clipboard = "unnamedplus"
 
 -- Visual options
 -- Disable visual text break on code view
-opt.wrap = false
+opt.wrap = true
 -- Neovim time to start reactioon
 opt.updatetime = 500
 -- Show numbers lines
