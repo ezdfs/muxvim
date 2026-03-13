@@ -42,3 +42,7 @@ keymap.set("n", "<leader>qa", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all files" 
 -- Treesitter keymaps
 -- Toggle fold with Spacebar
 keymap.set("n", "<space>", "za", { desc = "Toggle code fold" })
+
+-- Keymaps to horizontal scroll with increased speed
+vim.keymap.set('n', '<Right>', '5zl', { noremap = true, silent = true })
+vim.keymap.set('n', '<Left>', '5zh', { noremap = true, silent = true })
